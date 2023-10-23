@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/sample.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>  <title>じゃんけん</title>
+</head>
+
+<body>
+
+<header>
+      <img src="./Error.png" alt="" width="250px" >
+      <div id="nav-wrapper" class="nav-wrapper">
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <nav class="sp-nav">
+          <ul>
+            <li><a href="#janken">じゃんけん</a></li>
+            <li><a href="#sugoroku">すごろく</a></li>
+            <li><a href="#minesweeper">マインスウィーパー</a></li>
+            <li><a href="#slideshow">スライドショー</a></li>
+          </ul>
+        </nav>
+        <div class="black-bg" id="js-black-bg"></div>
+       </div>
+ </header>
+
+<main>
+  <div id="main-visual">
+    <img src="./love.png" alt="" width="100%">
+    <div class="meat-image-container" style="position: absolute; top: 75%; left: 58%;">
+      <img src="meat.png" alt="肉の画像" id="meat-image" width="120px" style="display: none;">
+
+  </div>  
+<br>
+  <h2 id="janken">じゃんけん</h2>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgment">勝ち</div>
+<br>
+  <div class="video-container">
+    <iframe class="video" src="https://www.youtube.com/embed/jrvfCNv4lyE?si=RO6WpdVvTkt8S2M9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/bxtV7pY6uCg?si=SMYv-7mBj5r7aqU0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/OPN22pNgmuA?si=V3gmP-1OoxAqsFdl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+<br>
+<br>
+</main>
+
+<script>
+//じゃんけん用のSCRIPTを書いてください
+// グー
+$("#gu_btn").on("click",function(){
+  const num = Math.random();
+  const r = Math.ceil(num * 3);
+  if(r == 1) {
+    $("#pc_hands").img("グー");
+    $("#judgment").html("あいこ");
+  } if(r == 2) {
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("勝ち");
+  } if(r == 3) {
+    $("#pc_hands").html("パー");
+    $("#judgment").html("負け");
+  }
+});
+
+// チョキ
+$("#cho_btn").on("click",function(){
+  const num = Math.random();
+  const r = Math.ceil(num * 3);
+  if(r == 1) {
+    $("#pc_hands").html("グー");
+    $("#judgment").html("負け");
+  } if(r == 2) {
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("あいこ");
+  } if(r == 3) {
+    $("#pc_hands").html("パー");
+    $("#judgment").html("勝ち");
+  }
+});
+
+// パー
+$("#par_btn").on("click",function(){
+  const num = Math.random();
+  const r = Math.ceil(num * 3);
+  if(r == 1) {
+    $("#pc_hands").html("グー");
+    $("#judgment").html("勝ち");
+  } if(r == 2) {
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("負け");
+  } if(r == 3) {
+    $("#pc_hands").html("パー");
+    $("#judgment").html("あいこ");
+  }
+});
+</script>
+
+<h2 id="sugoroku">呪術廻戦すごろく〜渋谷事変編〜</h2>
+
+<canvas id="canvas"></canvas>
+<br>
+<button id = "start" onclick="Start()">開始</button>
+<button id = "roll-dice" onclick="RollDice()">サイコロをふる</button>
+
+<br>
+<br>
+
+<div class="video-container">
+  <iframe class="video" src="https://www.youtube.com/embed/5yb2N3pnztU?si=_Ek8oE6xyA19AWh6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="video" src="https://www.youtube.com/embed/fR0tqhqM7Yg?si=n40V4JQmXOZL3WT6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br>
+
+<div class="video-container">
+  <iframe class="video" src="https://www.youtube.com/embed/fhzKLBZJC3w?si=iqL1f6JZusN4fXAi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="video" src="https://www.youtube.com/embed/kGY6N9DL4Jw?si=8WlY-C_tz6if1O2h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br>
+<script src = "./app.js"></script>
+
+<h2 id="minesweeper">マインスウィーパー</h2>
+
+<div id="setting">
+  W
+  <input type="number" id="w" value="9" min="2" max="50">
+  H
+  <input type="number" id="h" value="9" min="2" max="25">
+  B
+  <input type="number" id="b" value="10" min="1" max="1250">
+  <span class="bombCount">0</span>
+</div>
+<div id="setting2">
+  <div id="btn">
+      START
+  </div>
+  <span id="time" class="timer">000</span>
+</div>
+<table id="board">
+</table>
+<h3 id="result"></h3>
+<div id="text">
+  <h3>
+      <設定>
+  </h3>
+  <p>W: 横のマスの数</p>
+  <p>H: 縦のマスの数</p>
+  <p>B: 爆弾の数</p>
+  <h3>
+      <操作>
+  </h3>
+  <p>左クリック: マスを開ける</p>
+  <p>右クリック: <span class="flag"></span>マークを付ける</p>
+</div>
+
+<script src = "./main.js"></script>
+<br>
+  <div class="video-container">
+    <iframe class="video" src="https://www.youtube.com/embed/DlQBifgEwkk?si=wKjKw9Ax2_rMem6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/yFtOfwlGWOA?si=-BvOMKODQANhf15B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/ZxLuL612XQw?si=mUmyhn2dF3gJkJoy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+<br>
+
+<h2 id="slideshow">スライドショー</h2>
+<div class="slide-items__wrap">
+  <ul class="slide-items">
+    <li class="slide-items__item" max-width="1000px" >
+      <img src="./image1.jpg" max-width="1000px" alt="">
+    </li>
+    <li class="slide-items__item">
+      <img src="./image2.jpg" max-width="1000px" alt="">
+    </li>
+    <li class="slide-items__item">
+      <img src="./image3.jpg" max-width="1000px" alt="">
+    </li>
+  </ul>
+</div>
+
+
+
+</body>
+<footer></footer>
+</html>

@@ -1,0 +1,339 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+h2 {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.hamburger__line {
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  right: 0;
+  background-color: #000;
+  transition: all 0.5s;
+}
+
+.hamburger__line--1 {
+  top: 1px;
+}
+
+.hamburger__line--2 {
+  top: 18px;
+}
+
+.hamburger__line--3 {
+  top: 36px;
+}
+
+/*ハンバーガーがクリックされたら*/
+.open .hamburger__line--1 {
+  transform: rotate(-45deg);
+  top: 11px;
+}
+
+.open .hamburger__line--2 {
+  opacity: 0;
+}
+
+.open .hamburger__line--3 {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+/* 
+sp-nav(ナビ)
+=================================== */
+.sp-nav {
+  position: fixed;
+  right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+  top: 0;
+  width: 80%; /* ハンバーガーメニューの幅を調整 */
+  max-width: 300px; /* メニューが画面幅を超えないように設定 */  height: 100vh;
+  background-color: #fff;
+  transition: all 0.5s;
+  z-index: 200;
+  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+}
+
+.sp-nav a {
+  color: #000; /* 文字色を黒に設定 */
+  text-decoration: none; /* 下線を消す */
+}
+
+.sp-nav ul {
+  padding: 0; /* リストの余白を削除 */
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+  display: flex; /* リスト内の要素を水平に配置 */
+  flex-direction: column; /* リスト内の要素を縦に配置 */
+}
+
+.sp-nav li {
+  padding: 20px 0; /* メニュー項目の余白を設定 */
+  text-align: center; /* テキストを中央揃えに設定 */
+  font-size: 20px; /* フォントサイズを設定 */
+
+}
+
+/*ハンバーガーがクリックされたら右からスライド*/
+.open .sp-nav {
+  right: 0;
+}
+
+
+/* 
+black-bg(ハンバーガーメニュー解除用bg)
+=================================== */
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/*ハンバーガーメニューが開いたら表示*/
+.open .black-bg {
+  opacity: 0.3;
+  visibility: visible;
+}
+
+
+.meat-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-title {
+  width: 150px;
+}
+
+main{
+    border-bottom:1px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #87878755;
+    color:#fff;
+}
+
+.message {
+    color: red;
+    font-size: 500px;
+}
+
+#message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    color: blue;
+    font-size: 20px;
+    text-align: center;
+    display: none;
+    z-index: 2;
+  }
+  
+#message-bubble {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+#message-text {
+    margin: 0;
+  }
+  
+
+.video-container {
+    display: flex; /* 子要素を横に並べる */
+    flex-wrap: wrap;
+    justify-content: left; /* 子要素を均等に配置 */
+}
+
+.video {
+    width: 360px; /* 動画プレーヤーの幅 */
+    height: 215px; /* 動画プレーヤーの高さ */
+    margin-right: 10px; /* 動画と動画の間隔 */
+}
+
+#gu_btn {
+    background-color: red;
+}
+
+#cho_btn {
+    background-color: yellow;
+}
+
+#par_btn {
+    background-color: blue;
+}
+
+
+#setting {
+    width: 290px;
+    margin: 0 auto;
+  }
+  #text {
+    width: 290px;
+    margin: 0 auto;
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 5px;
+  }
+  #text h1 {
+    color: yellowgreen;
+    margin: 0;
+  }
+  #text h3 {
+    margin: 0;
+  }
+  #text p {
+    margin: 3px 0;
+  }
+  #setting2 {
+    display: flex;
+    width: 290px;
+    margin: 0 auto;
+  }
+  #btn {
+    width: 100%;
+    margin: 3px auto;
+    padding: 2px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border: solid 1px black;
+    background: black;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .timer::before {
+    line-height: 30px;
+    font-size: 24px;
+    font-family: "Material Icons Outlined";
+    content: "\e425";
+  }
+
+  #start {
+    cursor: pointer;
+  }
+
+  #roll-dice {
+    cursor: pointer;
+
+  }
+  
+  /* game */
+  #h,
+  #w,
+  #b {
+    width: 50px;
+  }
+  #board {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: yellowgreen;
+  }
+  td {
+    border: solid 3px white;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .open {
+    background: #e6e6e6;
+    animation: fadein 0.7s;
+  }
+  .flag::before {
+    font-family: "Material Icons";
+    content: "\e153";
+    animation: fadein 0.3s;
+  }
+  .bomb {
+    background: red;
+    animation: fadein 1s infinite;
+  }
+  .bomb::before {
+    font-family: "Material Icons";
+    content: "\ea0b";
+  }
+  .clear {
+    background: pink;
+    animation: fadein 5s infinite;
+  }
+  .clear::before {
+    font-family: "Material Icons";
+    content: "\e545";
+  }
+  .bombCount::before {
+    font-size: 24px;
+    font-family: "Material Icons";
+    content: "\ea0b";
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #result {
+    text-align: center;
+  }
+
